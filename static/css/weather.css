@@ -1,0 +1,146 @@
+*{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        html,body{
+    width:100%;
+    min-height:100vh;
+    margin:0;
+    background:#e3e3e3;
+    font-family:'Times New Roman', Times, serif;
+}
+
+        .main{
+    width:100%;
+    margin-top:90px;
+}
+        .navbar{
+    width:100%;
+    height:100px;
+    background:#333;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 30px;
+    position:fixed;
+    top:0;
+    left:0;
+   z-index: 1000;
+}
+
+.user-name{
+    font-size:35px;
+    font-weight:bold;
+}
+
+.logout-btn{
+    width:120px;
+    height:45px;
+    background:#f44336;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:18px;
+}
+
+.logout-btn:hover{
+    background:#d32f2f;
+}
+        .container,
+        .report{
+            width:550px;
+        background:#fff;
+        margin:120px auto 20px;
+        padding:30px;
+        border-radius:15px;
+        box-shadow:0 5px 15px rgba(0,0,0,.2);
+        
+        
+        }
+        
+
+        h1{
+            text-decoration:underline wavy;
+            margin-bottom:30px;
+            text-align:center;
+        }
+
+        h2{
+            text-decoration:underline double;
+            margin-bottom:30px;
+        }
+
+         label{
+            font-size:30px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        input,
+        button{
+            width:100%;
+            padding:15px;
+            margin-top:15px;
+            border-radius:15px;
+            border:1px solid lightgray;
+            outline:none;
+            font-size:22px;
+        }
+
+        button{
+            background:#FF5722;
+            color:#fff;
+            
+            border:none;
+        }
+
+        button:hover{
+            background:#e64a19;
+        }
+
+       
+
+        .weather-row{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            margin:18px 0;
+            font-size:28px;
+        }
+
+        .label{
+            width:180px;
+            text-align:left;
+            font-weight:bold;
+        }
+
+        .value{
+            width:180px;
+            text-align:left;
+            padding-left:15px;
+        }
+        .top-bar{
+    width:100%;
+    display:flex;
+    justify-content:flex-end;
+    padding:20px 30px;
+}
+
+.logout-btn{
+    width:120px;
+    padding:10px;
+    background:#f44336;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:18px;
+}
+
+.logout-btn:hover{
+    background:#d32f2f;
+}

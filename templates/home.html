@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+
+    <link rel="stylesheet" href="{% static 'css/whome.css' %}">
+</head>
+<body>
+
+    <div class="container">
+         <img src="{% static 'images/home.jpg' %}" alt="Home Image">
+
+         <div class="content">
+        <h1>Welcome to Weather Forecast</h1>
+        <p>Get real-time weather updates anywhere in the world.</p>
+
+        
+
+<div class="buttons">
+    <a href="{% url 'login' %}" class="btn login-btn">Login</a>
+    <a href="{% url 'signup' %}" class="btn signup-btn">Signup</a>
+</div>
+    </div>
+</div>
+
+</body>
+</html>

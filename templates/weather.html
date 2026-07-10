@@ -1,0 +1,96 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="{% static 'css/weather.css' %}">
+    
+
+</head>
+
+<body>
+    
+
+<div class="main">
+    <nav class="navbar">
+    <div class="user-name">
+        Welcome, {{ name }}
+    </div>
+
+    <a href="{% url 'logout' %}">
+        <button class="logout-btn" type="button">Logout</button>
+    </a>
+</nav>
+
+    <section class="container">
+
+        <h1>City Weather</h1>
+
+        <form method="POST" class="city-form">
+            {% csrf_token %}
+
+            <label for="city">City Name </label>
+
+            <input
+                type="text"
+                id="city"
+                name="city"
+                placeholder="Enter city name"
+                required>
+
+            <br><br>
+
+            <button type="submit">Submit</button>
+
+        </form>
+
+    </section>
+
+
+    {% if data %}
+
+    <section class="report">
+
+        <h2>Weather Report</h2>
+
+        <div class="weather-row">
+            <span class="label">City</span>:
+            <span class="value"> {{ data.city }}</span>
+        </div>
+
+        <div class="weather-row">
+            <span class="label">Country</span>:
+            <span class="value"> {{ data.country }}</span>
+        </div>
+
+        <div class="weather-row">
+            <span class="label">Temperature</span>:
+            <span class="value"> {{ data.temperature }} °C</span>
+        </div>
+
+        <div class="weather-row">
+            <span class="label">Humidity</span>:
+            <span class="value"> {{ data.humidity }} %</span>
+        </div>
+
+        <div class="weather-row">
+            <span class="label">Wind Speed</span>:
+            <span class="value"> {{ data.wind_speed }} km/h</span>
+        </div>
+
+        <div class="weather-row">
+            <span class="label">Condition</span>:
+            <span class="value"> {{ data.weather_condition }}</span>
+        </div>
+
+    </section>
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    display:grid;
+    place-items:center;
+    min-height:100vh;
+   background-color: #E2E2E2;
+}
+
+
+.wrapper{
+    width: 600px;
+    padding: 50px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 15px 20px rgba(0,0,0,0.1);
+}
+
+.wrapper .title{
+    text-align:center;
+    font-size:45px;
+    font-weight:700;
+    margin-bottom:30px;
+}
+
+.field{
+    width:100%;
+    height:60px;
+    margin-bottom:20px;
+}
+
+.field input{
+    width:100%;
+    height:100%;
+    border:1px solid lightgray;
+    border-bottom:2px solid lightgray;
+    border-radius:15px;
+    outline:none;
+    padding:0 20px;
+    font-size:20px;
+    transition:.3s;
+}
+
+.field input:focus{
+    border-color:#FF5722;
+}
+
+.field input::placeholder{
+    color:#999;
+}
+
+.field input:focus::placeholder{
+    color:#FF5722;
+}
+
+.pass-link{
+    margin-bottom:20px;
+}
+
+.pass-link a,
+.signup-link a{
+    text-decoration:none;
+    color:#FF5722;
+}
+
+.pass-link a:hover,
+.signup-link a:hover{
+    text-decoration:underline;
+}
+
+.btn{
+    height:50px;
+    margin-top:20px;
+}
+
+.btn input{
+    width:100%;
+    height:100%;
+    border:none;
+    border-radius:15px;
+    background:#FF5722;
+    color:#fff;
+    font-size:20px;
+    font-weight:500;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn input:hover{
+    opacity:.9;
+}
+
+.signup-link{
+    text-align:center;
+    margin-top:25px;
+}
