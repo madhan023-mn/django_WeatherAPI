@@ -51,47 +51,61 @@ def login(request):
 
 
 def weather(request):
-    print(request.session.get('user_id'))
     if 'user_id' not in request.session:
         return redirect('login')
+
     name = request.session.get('name')
-    
-    
-    if request.method=="POST":
-       
 
-        city=request.POST.get('city')
-        url='http://api.weatherapi.com/v1/current.json'
-        query_param={
-            'key':os.getenv("APIKEY"),
-            'q':city
+    if request.method == "POST":
+        city = request.POST.get('city')
+
+        url = "http://api.weatherapi.com/v1/current.json"
+
+        query_param = {
+            "key": os.getenv("APIKEY"),
+            "q": city
         }
+
         try:
+            response = requests.get(url, params=query_param)
 
-            response=requests.get(url,params=query_param)
-            if response.status_code==200:
-                data=response.json()
+            if response.status_code == 200:
+                data = response.json()
 
-                weather_data=models.Weather(city=data["location"]["name"],
-                country = data["location"]["country"],
-                temperature = data["current"]["temp_c"],
-                humidity = data["current"]["humidity"],
-                wind_speed = data["current"]["wind_kph"],
-                weather_condition = data["current"]["condition"]["text"],)
+                weather_data = models.Weather(
+                    city=data["location"]["name"],
+                    country=data["location"]["country"],
+                    temperature=data["current"]["temp_c"],
+                    humidity=data["current"]["humidity"],
+                    wind_speed=data["current"]["wind_kph"],
+                    weather_condition=data["current"]["condition"]["text"],
+                )
 
                 weather_data.save()
 
-                records={
-                    'data':weather_data,
-                    'name':name
+                records = {
+                    "name": name,
+                    "data": weather_data
                 }
-                print(records)
 
-                return render(request,'weather.html',records)
+                return render(request, "weather.html", records)
+
+            else:
+                return render(request, "weather.html", {
+                    "name": name,
+                    "error": "City not found."
+                })
+
         except Exception as e:
-            print("Error",e)
-        return render(request,'weather.html',{'name':name})
-    
+            return render(request, "weather.html", {
+                "name": name,
+                "error": str(e)
+            })
+
+    # Handles GET request
+    return render(request, "weather.html", {
+        "name": name
+    })
 
 def logout(request):
     if 'user_id' in request.session:

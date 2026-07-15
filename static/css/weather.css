@@ -101,7 +101,7 @@ label{
 }
 
 label i{
-    color:#0d6efd;
+    color:#ff3b30;
     margin-right:8px;
 }
 
@@ -116,13 +116,13 @@ input{
 }
 
 input:focus{
-    border-color:#0d6efd;
+    border-color:#ff3b30;
 }
 
 .container button{
     width:100%;
     padding:15px;
-    background:#0d6efd;
+    background:#ff3b30;
     color:white;
     border:none;
     border-radius:10px;
@@ -132,7 +132,7 @@ input:focus{
 }
 
 .container button:hover{
-    background:#084db8;
+    background:#d62828;
 }
 
 /* ================= REPORT ================= */
@@ -180,7 +180,7 @@ input:focus{
 
 .label i{
     width:30px;
-    color:#0d6efd;
+    color:#d62828;
 }
 
 .value{
