@@ -66,27 +66,32 @@ def weather(request):
             'key':os.getenv("APIKEY"),
             'q':city
         }
-        response=requests.get(url,params=query_param)
-        if response.status_code==200:
-            data=response.json()
+        try:
 
-            weather_data=models.Weather(city=data["location"]["name"],
-            country = data["location"]["country"],
-            temperature = data["current"]["temp_c"],
-            humidity = data["current"]["humidity"],
-            wind_speed = data["current"]["wind_kph"],
-            weather_condition = data["current"]["condition"]["text"],)
+            response=requests.get(url,params=query_param)
+            if response.status_code==200:
+                data=response.json()
 
-            weather_data.save()
+                weather_data=models.Weather(city=data["location"]["name"],
+                country = data["location"]["country"],
+                temperature = data["current"]["temp_c"],
+                humidity = data["current"]["humidity"],
+                wind_speed = data["current"]["wind_kph"],
+                weather_condition = data["current"]["condition"]["text"],)
 
-            records={
-                'data':weather_data,
-                'name':name
-            }
-            print(records)
+                weather_data.save()
 
-            return render(request,'weather.html',records)
-    return render(request,'weather.html',{'name':name})
+                records={
+                    'data':weather_data,
+                    'name':name
+                }
+                print(records)
+
+                return render(request,'weather.html',records)
+        except Exception as e:
+            print("Error",e)
+        return render(request,'weather.html',{'name':name})
+    
 
 def logout(request):
     if 'user_id' in request.session:

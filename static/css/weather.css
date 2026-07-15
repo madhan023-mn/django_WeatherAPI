@@ -1,146 +1,279 @@
+
+
 *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
-
-        html,body{
-    width:100%;
-    min-height:100vh;
     margin:0;
-    background:#e3e3e3;
-    font-family:'Times New Roman', Times, serif;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
 
-        .main{
-    width:100%;
-    margin-top:90px;
+body{
+    min-height:100vh;
+    background-color: #E2E2E2;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
 }
-        .navbar{
+
+.main{
     width:100%;
-    height:100px;
-    background:#333;
-    color:white;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    width:100%;
+    background:#1b1b1b;
+    color:#fff;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:0 30px;
+    padding:18px 40px;
     position:fixed;
     top:0;
     left:0;
-   z-index: 1000;
+    z-index:1000;
+    box-shadow:0 5px 15px rgba(0,0,0,.25);
+}
+
+.logo{
+    font-size:30px;
+    font-weight:700;
+}
+
+.logo i{
+    color:#ffd43b;
+    margin-right:8px;
 }
 
 .user-name{
-    font-size:35px;
-    font-weight:bold;
+    font-size:22px;
+    font-weight:600;
 }
 
 .logout-btn{
-    width:120px;
-    height:45px;
-    background:#f44336;
-    color:white;
+    background:#ff3b30;
+    color:#fff;
     border:none;
-    border-radius:8px;
+    padding:12px 22px;
+    border-radius:10px;
+    font-size:17px;
     cursor:pointer;
-    font-size:18px;
+    transition:.3s;
 }
 
 .logout-btn:hover{
-    background:#d32f2f;
+    background:#d62828;
+    transform:scale(1.05);
 }
-        .container,
-        .report{
-            width:550px;
-        background:#fff;
-        margin:120px auto 20px;
-        padding:30px;
-        border-radius:15px;
-        box-shadow:0 5px 15px rgba(0,0,0,.2);
-        
-        
-        }
-        
 
-        h1{
-            text-decoration:underline wavy;
-            margin-bottom:30px;
-            text-align:center;
-        }
+/* ================= SEARCH CARD ================= */
 
-        h2{
-            text-decoration:underline double;
-            margin-bottom:30px;
-        }
+.container{
+    width:500px;
+    max-width:92%;
+    background:#fff;
+    margin:130px auto 30px;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
+}
 
-         label{
-            font-size:30px;
-            text-align: left;
-            font-weight: bold;
-        }
+.weather-top{
+    text-align:center;
+    font-size:75px;
+    color:#ffb300;
+    margin-bottom:15px;
+}
 
-        input,
-        button{
-            width:100%;
-            padding:15px;
-            margin-top:15px;
-            border-radius:15px;
-            border:1px solid lightgray;
-            outline:none;
-            font-size:22px;
-        }
+.container h1{
+    text-align:center;
+    margin-bottom:30px;
+    color:#333;
+}
 
-        button{
-            background:#FF5722;
-            color:#fff;
-            
-            border:none;
-        }
+label{
+    display:block;
+    margin-bottom:10px;
+    font-size:20px;
+    font-weight:600;
+    color:#333;
+}
 
-        button:hover{
-            background:#e64a19;
-        }
+label i{
+    color:#0d6efd;
+    margin-right:8px;
+}
 
-       
-
-        .weather-row{
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            margin:18px 0;
-            font-size:28px;
-        }
-
-        .label{
-            width:180px;
-            text-align:left;
-            font-weight:bold;
-        }
-
-        .value{
-            width:180px;
-            text-align:left;
-            padding-left:15px;
-        }
-        .top-bar{
+input{
     width:100%;
-    display:flex;
-    justify-content:flex-end;
-    padding:20px 30px;
+    padding:15px;
+    border:2px solid #ddd;
+    border-radius:10px;
+    font-size:18px;
+    outline:none;
+    margin-bottom:20px;
 }
 
-.logout-btn{
-    width:120px;
-    padding:10px;
-    background:#f44336;
+input:focus{
+    border-color:#0d6efd;
+}
+
+.container button{
+    width:100%;
+    padding:15px;
+    background:#0d6efd;
     color:white;
     border:none;
-    border-radius:8px;
+    border-radius:10px;
+    font-size:19px;
     cursor:pointer;
-    font-size:18px;
+    transition:.3s;
 }
 
-.logout-btn:hover{
-    background:#d32f2f;
+.container button:hover{
+    background:#084db8;
+}
+
+/* ================= REPORT ================= */
+
+.report{
+    width:550px;
+    max-width:92%;
+    background:#fff;
+    margin:20px auto 40px;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
+}
+
+.report-icon{
+    text-align:center;
+    font-size:80px;
+    color:#ff9800;
+    margin-bottom:15px;
+}
+
+.report h2{
+    text-align:center;
+    margin-bottom:30px;
+    color:#222;
+}
+
+.weather-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 0;
+    border-bottom:1px solid #ddd;
+}
+
+.weather-row:last-child{
+    border-bottom:none;
+}
+
+.label{
+    font-size:19px;
+    font-weight:600;
+    color:#333;
+}
+
+.label i{
+    width:30px;
+    color:#0d6efd;
+}
+
+.value{
+    font-size:19px;
+    font-weight:500;
+    color:#555;
+}
+
+/* ================= TABLET ================= */
+
+@media(max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+        gap:12px;
+        padding:18px;
+    }
+
+    .logo{
+        font-size:26px;
+    }
+
+    .user-name{
+        font-size:20px;
+        text-align:center;
+    }
+
+    .logout-btn{
+        width:160px;
+    }
+
+    .container{
+        margin-top:180px;
+        padding:25px;
+    }
+
+    .report{
+        padding:25px;
+    }
+
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:480px){
+
+    .logo{
+        font-size:22px;
+    }
+
+    .user-name{
+        font-size:18px;
+    }
+
+    .weather-top{
+        font-size:60px;
+    }
+
+    .report-icon{
+        font-size:65px;
+    }
+
+    h1{
+        font-size:28px;
+    }
+
+    h2{
+        font-size:24px;
+    }
+
+    label{
+        font-size:18px;
+    }
+
+    input{
+        font-size:16px;
+        padding:12px;
+    }
+
+    .container button{
+        font-size:17px;
+        padding:13px;
+    }
+
+    .weather-row{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:8px;
+    }
+
+    .label,
+    .value{
+        font-size:17px;
+    }
+
 }
